@@ -1,0 +1,3 @@
+web: python -m SimpleHTTPServer
+tpl: `npm bin`/coffeecup -w index.coffee
+mdl: `npm bin`/coffee -c -w src/
