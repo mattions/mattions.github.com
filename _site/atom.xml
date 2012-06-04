@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
- <title>Michele Mattioni's personal website</title>
+ <title>Michele's web</title>
  <link href="http://michelemattioni.me/atom.xml" rel="self"/>
  <link href="http://michelemattioni.me"/>
- <updated>2012-06-04T19:19:22+02:00</updated>
+ <updated>2012-06-04T19:59:08+02:00</updated>
  <id>http://michelemattioni.me</id>
  <author>
    <name>Michele Mattioni</name>
@@ -17,7 +17,8 @@
    <link href="http://michelemattioni.me/acedemic/2012/06/04/neuroml-and-standards"/>
    <updated>2012-06-04T00:00:00+02:00</updated>
    <id>http://michelemattioni.me/acedemic/2012/06/04/neuroml-and-standards</id>
-   <content type="html">&lt;p&gt;Developing complex models (like mine) is only possible if we can reuse and merge smaller models. To achieve this we need a system to archive and express models in standard way that is no tight to one specific software, it represents the model in a not ambigous way, and it&amp;#8217;s available to everybody.&lt;/p&gt;
+   <content type="html">&lt;img src='/assets/gfx/NeuroML_logo.png' /&gt;
+&lt;p&gt;Developing complex models (like mine) is only possible if we can reuse and merge smaller models. To achieve this we need a system to archive and express models in standard way that is no tight to one specific software, it represents the model in a not ambigous way, and it&amp;#8217;s available to everybody.&lt;/p&gt;
 
 &lt;p&gt;The idea of having a lego system, where we can plug different models together is very appealing in computational neuroscience, and it will give the possibility to simulate more complex scenarios.&lt;/p&gt;
 
