@@ -33,34 +33,39 @@ tagline: Welcome aboard =)
     </ul>
     </div>
     <div class="span3">
-<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+    <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
 <script>
 new TWTR.Widget({
   version: 2,
-  type: 'profile',
-  rpp: 4,
+  type: 'search',
+  search: 'from:mattions',
   interval: 30000,
+  title: 'Tweets from Michele',
+  subject: '',
   width: 250,
   height: 300,
   theme: {
     shell: {
-      background: '#EEE',
-      color: '#333'
+      background: '#8ec1da',
+      color: '#ffffff'
     },
     tweets: {
       background: '#ffffff',
-      color: '#000000',
-      links: '#08C'
+      color: '#444444',
+      links: '#1985b5'
     }
   },
   features: {
     scrollbar: false,
-    loop: false,
-    live: false,
+    loop: true,
+    live: true,
     behavior: 'default'
   }
-}).render().setUser('mattions').start();
+}).render().start();
 </script>
+    
+    
+    
     </div>
 </div>
 

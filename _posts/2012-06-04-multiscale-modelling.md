@@ -7,7 +7,9 @@ tags: [multiscale modelling, event driven, msn, plasticity]
 ---
 {% include JB/setup %}
 
-<img src="{{BASE_PATH}}/assets/gfx/multiscale_simulation_msn.png" />
+<center>
+<img src="{{ BASE_PATH }}/assets/gfx/spines_detailed_thumbnail.png" />
+</center>
 
 A model can be considered multiscale when one or both these conditions are true: 
 (i) the object of the modelling spawns different orders of magnitude in at least 
@@ -26,11 +28,11 @@ biochemical cascades with timescales spanning from minutes to hours or days.
 Nonetheless, given the wide spectrum of the processes involved, communities have 
 focused on one particular domain, the electrical aspect or the biochemical one.
 
-In my PhD I have developed an event-driven algorithm which allows to integrate 
+In my Ph.D. I have developed an event-driven algorithm which allows to integrate 
 different simulators, optimizing the number of syncs between the two and the time
 of the syncing. At the same time I've also developed a multiscale model of a 
 Medium Spiny Neuron of the Striatum, with 1504 spine modelled explicitely where 
 the plasticity, the strenght of a synapse, is computed as the results of the 
 integration between the electrical and the biochemical.
 
-<img src="{{ BASE_PATH }}/assets/gfx/spines_detailed_thumbnail.png" />
+<img src="{{BASE_PATH}}/assets/gfx/multiscale_simulation_msn.png" />
