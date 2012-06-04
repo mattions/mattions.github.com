@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Neuroml and standards"
+title: "NeuroML and standards"
 description: ""
-category: 
-tags: []
+category: acedemic
+tags: [standars, neuroml, sbml, codification]
 ---
 {% include JB/setup %}
 

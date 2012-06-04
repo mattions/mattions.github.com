@@ -4,7 +4,7 @@
  <title>Michele Mattioni's personal website</title>
  <link href="http://michelemattioni.me/atom.xml" rel="self"/>
  <link href="http://michelemattioni.me"/>
- <updated>2012-06-04T18:50:02+02:00</updated>
+ <updated>2012-06-04T19:04:28+02:00</updated>
  <id>http://michelemattioni.me</id>
  <author>
    <name>Michele Mattioni</name>
@@ -13,10 +13,10 @@
 
  
  <entry>
-   <title>Neuroml and standards</title>
-   <link href="http://michelemattioni.me/2012/06/04/neuroml-and-standards"/>
+   <title>NeuroML and standards</title>
+   <link href="http://michelemattioni.me/acedemic/2012/06/04/neuroml-and-standards"/>
    <updated>2012-06-04T00:00:00+02:00</updated>
-   <id>http://michelemattioni.me/2012/06/04/neuroml-and-standards</id>
+   <id>http://michelemattioni.me/acedemic/2012/06/04/neuroml-and-standards</id>
    <content type="html">&lt;p&gt;Developing complex models (like mine) is only possible if we can reuse and merge smaller models. To achieve this we need a system to archive and express models in standard way that is no tight to one specific software, it represents the model in a not ambigous way, and it&amp;#8217;s available to everybody.&lt;/p&gt;
 
 &lt;p&gt;The idea of having a lego system, where we can plug different models together is very appealing in computational neuroscience, and it will give the possibility to simulate more complex scenarios.&lt;/p&gt;
@@ -25,12 +25,11 @@
  </entry>
  
  <entry>
-   <title>Multiscale modelling</title>
+   <title>Multiscale modelling, integrating electrical and biochemical</title>
    <link href="http://michelemattioni.me/academic/2012/06/04/multiscale-modelling"/>
    <updated>2012-06-04T00:00:00+02:00</updated>
    <id>http://michelemattioni.me/academic/2012/06/04/multiscale-modelling</id>
-   <content type="html">&lt;h1 id='multiscale_modelling_integrating_electrical_and_biochemical'&gt;Multiscale modelling, integrating electrical and biochemical&lt;/h1&gt;
-&lt;img src='/assets/gfx/multiscale_simulation_msn.png' /&gt;
+   <content type="html">&lt;img src='/assets/gfx/multiscale_simulation_msn.png' /&gt;
 &lt;p&gt;A model can be considered multiscale when one or both these conditions are true: (i) the object of the modelling spawns different orders of magnitude in at least time or space e.g.: from microseconds (μs) to minutes (min), or from nanometers (nm) to millimeters (mm); (ii) parts of the model run with different timescales and/or with different spatial resolutions, influencing each other through a systematic exchange of variables (Weinan and Engquist, 2003).&lt;/p&gt;
 
 &lt;p&gt;The result of the simulation is the summa of the different approaches, combined together, and cannot be achieved using one part of the model only, or simulating them in a disconnected way. All branches of Biology are inherently multiscale. Neuroscience as well has also to address multiscale problems, where for example, an excitatory release of glutamate can trigger an increase in the Calcium concentration, which can then act as second messenger, stimulating complex biochemical cascades with timescales spanning from minutes to hours or days. Nonetheless, given the wide spectrum of the processes involved, communities have focused on one particular domain, the electrical aspect or the biochemical one.&lt;/p&gt;

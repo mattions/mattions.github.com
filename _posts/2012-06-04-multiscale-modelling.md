@@ -1,13 +1,11 @@
 ---
 layout: post
-title: "Multiscale modelling"
+title: "Multiscale modelling, integrating electrical and biochemical"
 description: ""
 category: academic 
 tags: [multiscale modelling, event driven, msn, plasticity]
 ---
 {% include JB/setup %}
-
-# Multiscale modelling, integrating electrical and biochemical
 
 <img src="{{BASE_PATH}}/assets/gfx/multiscale_simulation_msn.png" />
 

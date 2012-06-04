@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Neuronvisio, a Neuron companion"
-description: "see your model in 3D"
+description: ""
 category: academic
 tags: [3D visualization, computational neuroscience, neurons, neuroml]
 ---
