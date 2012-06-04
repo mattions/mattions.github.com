@@ -11,9 +11,11 @@ tagline: Welcome aboard =)
     <div class="span9">
     <p>My name is <strong>Michele Mattioni</strong> and I'm a computational neuroscientist.</p>
 
-    <p>In this pages I'll try to give an overwiew about what I'm up to. To be up to 
-    date, you could check out one of the links below, or have a look to the diffrent 
-    projects I'm up to.</p>
+    <p>To be up to date, you could check out one of the links below, or have a look 
+    to the diffrent projects I'm up to; in the projects section I've summarized some 
+    of the projects I have undergoing or I've done in the past.</p>
+    
+    <p> You can email me at <a href="mailto:mattions@gmail.com">mattions@gmail.com</a>, or</p>
     
     <ul>
     <li> you can follow me on <a href="http://twitter.com/mattions">twitter</a></li>
@@ -21,6 +23,7 @@ tagline: Welcome aboard =)
     <li> check out my <a href="http://github.com/mattions/">github</a></li>
     <li> have a look at some of my slides on <a href="http://www.slideshare.net/mattions/">slideshare</a></li>
     <li> visit my profile on <a href="http://www.linkedin.com/pub/michele-mattioni/6/18a/478">linkedin</a></li>
+    
     </ul>
     </div>
 </div>
