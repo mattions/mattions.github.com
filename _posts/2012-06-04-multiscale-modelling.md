@@ -13,8 +13,8 @@ tags: [multiscale modelling, event driven, msn, plasticity]
 
 A model can be considered multiscale when one or both these conditions are true: 
 (i) the object of the modelling spawns different orders of magnitude in at least 
-time or space e.g.: from microseconds [μs] to minutes [min], or from nanometers [nm]
-to millimeters [mm]; (ii) parts of the model run with different timescales and/or 
+time or space e.g.: from microseconds (μs) to minutes (min), or from nanometers (nm)
+to millimeters (mm); (ii) parts of the model run with different timescales and/or 
 with different spatial resolutions, influencing each other through a systematic 
 exchange of variables (Weinan and Engquist, 2003).
 

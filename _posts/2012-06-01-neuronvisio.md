@@ -1,13 +1,11 @@
 ---
 layout: post
 title: "Neuronvisio, a Neuron companion"
-description: ""
+description: "see your model in 3D"
 category: academic
 tags: [3D visualization, computational neuroscience, neurons, neuroml]
 ---
 {% include JB/setup %}
-
-# Neuronvisio, a Neuron companion.
 
 <img src="{{BASE_PATH}}/assets/gfx/pyramidal_3D_change_voltage.png" />
 
