@@ -32,3 +32,5 @@ of the syncing. At the same time I've also developed a multiscale model of a
 Medium Spiny Neuron of the Striatum, with 1504 spine modelled explicitely where 
 the plasticity, the strenght of a synapse, is computed as the results of the 
 integration between the electrical and the biochemical.
+
+<img src="{{ BASE_PATH }}/assets/gfx/spines_detailed_thumbnail.png" />

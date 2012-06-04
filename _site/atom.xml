@@ -4,7 +4,7 @@
  <title>Michele's web</title>
  <link href="http://michelemattioni.me/atom.xml" rel="self"/>
  <link href="http://michelemattioni.me"/>
- <updated>2012-06-04T19:59:08+02:00</updated>
+ <updated>2012-06-04T23:35:00+02:00</updated>
  <id>http://michelemattioni.me</id>
  <author>
    <name>Michele Mattioni</name>
@@ -35,7 +35,8 @@
 
 &lt;p&gt;The result of the simulation is the summa of the different approaches, combined together, and cannot be achieved using one part of the model only, or simulating them in a disconnected way. All branches of Biology are inherently multiscale. Neuroscience as well has also to address multiscale problems, where for example, an excitatory release of glutamate can trigger an increase in the Calcium concentration, which can then act as second messenger, stimulating complex biochemical cascades with timescales spanning from minutes to hours or days. Nonetheless, given the wide spectrum of the processes involved, communities have focused on one particular domain, the electrical aspect or the biochemical one.&lt;/p&gt;
 
-&lt;p&gt;In my PhD I have developed an event-driven algorithm which allows to integrate different simulators, optimizing the number of syncs between the two and the time of the syncing. At the same time I&amp;#8217;ve also developed a multiscale model of a Medium Spiny Neuron of the Striatum, with 1504 spine modelled explicitely where the plasticity, the strenght of a synapse, is computed as the results of the integration between the electrical and the biochemical.&lt;/p&gt;</content>
+&lt;p&gt;In my PhD I have developed an event-driven algorithm which allows to integrate different simulators, optimizing the number of syncs between the two and the time of the syncing. At the same time I&amp;#8217;ve also developed a multiscale model of a Medium Spiny Neuron of the Striatum, with 1504 spine modelled explicitely where the plasticity, the strenght of a synapse, is computed as the results of the integration between the electrical and the biochemical.&lt;/p&gt;
+&lt;img src='/assets/gfx/spines_detailed_thumbnail.png' /&gt;</content>
  </entry>
  
  <entry>

@@ -6,7 +6,7 @@ tagline: Welcome aboard =)
 {% include JB/setup %}
 
 <div class="row-fluid">
-    <div class="span3"><img src="assets/gfx/Michele_Mattioni_sepia.jpg"/> </div>
+    <div class="span2"><img src="assets/gfx/Michele_Mattioni_sepia.jpg"/> </div>
     
     <div class="span6">
     <p>My name is <strong>Michele Mattioni</strong> and I'm a computational neuroscientist. 
@@ -33,14 +33,14 @@ tagline: Welcome aboard =)
     </ul>
     </div>
     <div class="span3">
-    <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
 <script>
 new TWTR.Widget({
   version: 2,
   type: 'profile',
   rpp: 4,
   interval: 30000,
-  width: 'auto',
+  width: 250,
   height: 300,
   theme: {
     shell: {
@@ -56,8 +56,8 @@ new TWTR.Widget({
   features: {
     scrollbar: false,
     loop: false,
-    live: true,
-    behavior: 'all'
+    live: false,
+    behavior: 'default'
   }
 }).render().setUser('mattions').start();
 </script>
