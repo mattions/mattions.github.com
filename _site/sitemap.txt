@@ -7,6 +7,6 @@ http://michelemattioni.me/atom.xml
 http://michelemattioni.me/tags.html
 http://michelemattioni.me/categories.html
 
-http://michelemattioni.me/acedemic/2012/06/04/neuroml-and-standards
+http://michelemattioni.me/academic/2012/06/04/neuroml-and-standards
 http://michelemattioni.me/academic/2012/06/04/multiscale-modelling
 http://michelemattioni.me/academic/2012/06/01/neuronvisio

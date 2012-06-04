@@ -4,7 +4,7 @@
  <title>Michele's web</title>
  <link href="http://michelemattioni.me/atom.xml" rel="self"/>
  <link href="http://michelemattioni.me"/>
- <updated>2012-06-05T00:01:51+02:00</updated>
+ <updated>2012-06-05T01:13:11+02:00</updated>
  <id>http://michelemattioni.me</id>
  <author>
    <name>Michele Mattioni</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>NeuroML and standards</title>
-   <link href="http://michelemattioni.me/acedemic/2012/06/04/neuroml-and-standards"/>
+   <link href="http://michelemattioni.me/academic/2012/06/04/neuroml-and-standards"/>
    <updated>2012-06-04T00:00:00+02:00</updated>
-   <id>http://michelemattioni.me/acedemic/2012/06/04/neuroml-and-standards</id>
+   <id>http://michelemattioni.me/academic/2012/06/04/neuroml-and-standards</id>
    <content type="html">&lt;img src='/assets/gfx/NeuroML_logo.png' /&gt;
 &lt;p&gt;Developing complex models (like mine) is only possible if we can reuse and merge smaller models. To achieve this we need a system to archive and express models in standard way that is no tight to one specific software, it represents the model in a not ambigous way, and it&amp;#8217;s available to everybody.&lt;/p&gt;
 
