@@ -2,3 +2,7 @@ node_modules
 
 # Created by jekyll automatically.
 _site
+
+# Directory where the them are cloned
+
+_theme_packages
