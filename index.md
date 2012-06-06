@@ -16,8 +16,8 @@ tagline: Welcome aboard =)
         
         <p> I received my joint <strong>Ph.D.</strong> from the 
         <strong><a href="http://www.cam.ac.uk/">University of Cambridge</a></strong> 
-        and the <strong><a href="http://www.ebi.ac.uk">EBI</a></strong>. During 
-        my Ph.D I've studied multiscale modelling, multicompartiment neurons, 
+        and the <strong><a href="http://www.ebi.ac.uk">EBI</a></strong>, during 
+        which I've studied multiscale modelling, multicompartiment neurons, 
         biochemical pathways and their interaction on synaptic plasticity. More 
         info about this in the <a href="categories.html#academic-ref">academic category</a>.</p>
 
