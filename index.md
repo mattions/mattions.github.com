@@ -10,16 +10,16 @@ tagline: Welcome aboard =)
     
     <div class="span5">
         <p>My name is <strong>Michele Mattioni</strong> and I'm a computational neuroscientist. 
-        I've obtained my Bachelor (hons) from the <a href="http://www.univpm.it/">Università 
+        I obtained my Bachelor (hons) from the <a href="http://www.univpm.it/">Università 
         Politecnica delle Marche</a>, then my Master Of Science (hons) from the 
         <a href="http://www.unicam.it/">Università di Camerino</a>.</p>
         
-        <p> After an interneship on Natual Language Processing at the 
-        <a href="http://www.ebi.ac.uk">EBI</a>, I have obtained my joint <strong>Ph.D.</strong> 
-        between the <strong><a href="http://www.cam.ac.uk/">University of Cambridge</a></strong> 
-        and the <strong><a href="http://www.ebi.ac.uk">EBI</a></strong> studying 
-        multiscale modelling and multicompartiment neurons. More info about this in 
-        the <a href="categories.html#academic-ref">academic category</a>.</p>
+        <p> I received my joint <strong>Ph.D.</strong> from the 
+        <strong><a href="http://www.cam.ac.uk/">University of Cambridge</a></strong> 
+        and the <strong><a href="http://www.ebi.ac.uk">EBI</a></strong>. During 
+        my Ph.D I've studied multiscale modelling, multicompartiment neurons, 
+        biochemical pathways and their interaction on synaptic plasticity. More 
+        info about this in the <a href="categories.html#academic-ref">academic category</a>.</p>
 
         <p>To be up to date with my latest endevours, you could check out one of the 
         links below, or have a look to the different projects I'm up to in the projects 
