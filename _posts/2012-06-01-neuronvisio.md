@@ -28,4 +28,4 @@ software and analysed in a later stage, without re-running the simulation.
 - Automatic download and running of models in ModelDB
 
 More info at [http://neuronvisio.org](http://neuronvisio.org)
-Neuronvisio paper has been published in [http://www.frontiersin.org/neuroinformatics/10.3389/fninf.2012.00020/abstract](Frontiers in Neuroinformatics).
+Neuronvisio paper has been published in [Frontiers in Neuroinformatics](http://www.frontiersin.org/neuroinformatics/10.3389/fninf.2012.00020/abstract).
