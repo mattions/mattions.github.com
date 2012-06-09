@@ -1,7 +1,8 @@
 ---
-layout: page
+layout: default
 title: Hello there!
 tagline: Welcome aboard =)
+tweets: true
 ---
 {% include JB/setup %}
 
@@ -37,8 +38,6 @@ tagline: Welcome aboard =)
             <li> visit my profile on 
             <a href="http://www.linkedin.com/pub/michele-mattioni/6/18a/478">linkedin</a></li>    
         </ul>
-        
-
     </div>
     <div class="span5">
         <h1> Projects</h1>
@@ -49,9 +48,9 @@ tagline: Welcome aboard =)
                 <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
           {% endfor %}
         </ul>
-        
     </div>
 </div>
-
+<h2>The tweets</h2>
+<div id="tweets"></div>
 
 
