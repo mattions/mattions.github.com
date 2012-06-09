@@ -1,56 +1,7 @@
 ---
-layout: default
+layout: front
 title: Hello there!
 tagline: Welcome aboard =)
 tweets: true
 ---
-{% include JB/setup %}
-
-<div class="row-fluid">
-    <div class="span2"><img src="assets/gfx/Michele_Mattioni_sepia.jpg"/> </div>
-    
-    <div class="span5">
-        <p>My name is <strong>Michele Mattioni</strong> and I'm a computational neuroscientist. 
-        I obtained my Bachelor (hons) from the <a href="http://www.univpm.it/">Università 
-        Politecnica delle Marche</a>, then my Master Of Science (hons) from the 
-        <a href="http://www.unicam.it/">Università di Camerino</a>.</p>
-        
-        <p> I received my joint <strong>Ph.D.</strong> from the 
-        <strong><a href="http://www.cam.ac.uk/">University of Cambridge</a></strong> 
-        and the <strong><a href="http://www.ebi.ac.uk">EBI</a></strong>, during 
-        which I've studied multiscale modelling, multicompartiment neurons, 
-        biochemical pathways and their interaction on synaptic plasticity. More 
-        info about this in the <a href="categories.html#academic-ref">academic category</a>.</p>
-
-        <p>To be up to date with my latest endevours, you could check out one of the 
-        links below, or have a look to the different projects I'm up to in the projects 
-        section. Over there I've summarized some of the projects I have undergoing 
-        or I've done in the past.</p>
-        
-        <p> You can email me at <a href="mailto:mattions@gmail.com">mattions@gmail.com</a>, or</p>
-        
-        <ul>
-            <li> you can follow me on <a href="http://twitter.com/mattions">twitter</a></li>
-            <li> subscribe to my <a href="http://blog.michelemattioni.me/">blog</a></li>
-            <li> check out my <a href="http://github.com/mattions/">github</a></li>
-            <li> have a look at some of my slides on 
-            <a href="http://www.slideshare.net/mattions/">slideshare</a></li>
-            <li> visit my profile on 
-            <a href="http://www.linkedin.com/pub/michele-mattioni/6/18a/478">linkedin</a></li>    
-        </ul>
-    </div>
-    <div class="span5">
-        <h1> Projects</h1>
-
-        <ul class="posts">
-          {% for post in site.posts %}
-            <li><span>{{ post.date | date_to_string }}</span> &raquo; 
-                <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
-          {% endfor %}
-        </ul>
-    </div>
-</div>
-<h2>The tweets</h2>
-<div id="tweets"></div>
-
 
