@@ -38,6 +38,6 @@ integration between the electrical and the biochemical.
 The paper about the project can be found on 
 [Plos One](http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0066811), 
 the code is on [Github](https://github.com/mattions/TimeScales), and the documentation 
-is available at http://michelemattioni.me/TimeScales/ .
+is available at [Timescale documentation](http://michelemattioni.me/TimeScales/).
 
 <img src="{{BASE_PATH}}/assets/gfx/multiscale_simulation_msn.png" />
