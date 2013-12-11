@@ -35,4 +35,9 @@ Medium Spiny Neuron of the Striatum, with 1504 spine modelled explicitely where
 the plasticity, the strenght of a synapse, is computed as the results of the 
 integration between the electrical and the biochemical.
 
+The paper about the project can be found on 
+[Plos One](http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0066811), 
+the code is on [Github](https://github.com/mattions/TimeScales), and the documentation 
+is available at http://michelemattioni.me/TimeScales/ .
+
 <img src="{{BASE_PATH}}/assets/gfx/multiscale_simulation_msn.png" />
