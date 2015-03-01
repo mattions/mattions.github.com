@@ -5,7 +5,7 @@ My personal website set up using [Jekyll boostrap] (http://jekyllbootstrap.com/)
 
 To develop locally just run:
 
-```jekyll --server```
+```jekyll server```
 
 select proper ruby interpreter with 
 
