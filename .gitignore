@@ -6,3 +6,5 @@ _site
 # Directory where the them are cloned
 
 _theme_packages
+
+.project
