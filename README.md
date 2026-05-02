@@ -1,27 +1,46 @@
-## Website
+# Michele Mattioni's Website
 
-My personal website set up using [Jekyll boostrap] (http://jekyllbootstrap.com/) and [jekyll] 
-(https://github.com/mojombo/jekyll).
+A modern, responsive personal website showcasing research and blog posts on computational neuroscience, data science, and technology.
 
-To develop locally just run:
+## Tech Stack
 
-```jekyll server```
+This is a **pure static HTML** site — no build step, no dependencies. Just clean HTML5 + CSS3.
 
-select proper ruby interpreter with 
+### Design
 
-```rvm use defaul```
+- **Fonts**: Playfair Display (headings) + Inter (body) via Google Fonts
+- **Colors**: Navy (#0f1c2e), Teal (#2e7d88), Slate (#5a6577)
+- **Features**: Sticky frosted-glass navbar, responsive layout, fade-in animations, mobile hamburger menu
 
-## Update the theme
-
-For some reason the Rake theme:install does not work properly and does not override.
-A quick hack to get this working is to remove the two directory belonging to the theme:
+### Structure
 
 ```
-rm -rv _includes/themes/twitter-2.0-cyborg/ assets/themes/twitter-2.0-cyborg/
+.
+├── index.html          # Homepage with hero + latest posts
+├── archive.html        # All posts by date
+├── tags.html           # Posts grouped by tags
+├── categories.html     # Posts grouped by category
+├── pages.html          # Site pages
+├── posts/              # Individual blog post pages
+├── 404.html            # Custom 404 page
+└── assets/
+    └── themes/twitter-2.0-cyborg/
+        └── css/
+            └── style.css    # All styling
 ```
 
-and then procede with the classic 
+## Development
 
+No build tools needed. Just open `index.html` in a browser or serve with:
+
+```bash
+python3 -m http.server 8000
 ```
-rake theme:install git="https://github.com/mattions/theme-twitter-2.0-cyborg"
-```
+
+## Content
+
+The site contains 6 blog posts spanning topics in:
+- Computational neuroscience (NeuroML, neuron modeling)
+- Scientific computing
+- Sustainable technology
+- Bitcoin payments

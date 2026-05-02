@@ -1,22 +1,47 @@
----
-layout: page
-title: Categories
-header: Posts By Category
-group: navigation
----
-{% include JB/setup %}
-
-<ul class="tag_box inline">
-  {% assign categories_list = site.categories %}
-  {% include JB/categories_list %}
-</ul>
-
-
-{% for category in site.categories %} 
-  <h2 id="{{ category[0] }}-ref">{{ category[0] | join: "/" }}</h2>
-  <ul>
-    {% assign pages_list = category[1] %}  
-    {% include JB/pages_list %}
-  </ul>
-{% endfor %}
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Categories &middot; Michele Mattioni</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="/mattions.github.com/assets/themes/twitter-2.0-cyborg/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="/mattions.github.com/" class="brand">Michele Mattioni</a>
+      <button class="nav-toggle" onclick="document.querySelector('.navbar .nav').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav">
+        <li><a href="/mattions.github.com/">Home</a></li>
+        <li><a href="/mattions.github.com/pages.html">Pages</a></li>
+        <li><a href="/mattions.github.com/archive.html">Archive</a></li>
+        <li><a href="/mattions.github.com/tags.html">Tags</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="content">
+      <div class="fade-in">
+        <h2 class="section-title">Posts By Category</h2>
+        <div class="category-card">
+          <h3>general</h3>
+          <ul>
+          <li><a href="/mattions.github.com/posts/2012-06-01-neuronvisio.html">Neuronvisio, a Neuron companion</a> <span style="color:var(--slate);font-size:0.85rem;">(2012-06-01)</span></li>
+          <li><a href="/mattions.github.com/posts/2012-06-04-multiscale-modelling.html">Multiscale modelling, integrating electrical and biochemical</a> <span style="color:var(--slate);font-size:0.85rem;">(2012-06-04)</span></li>
+          <li><a href="/mattions.github.com/posts/2012-06-04-neuroml-and-standards.html">NeuroML and standards</a> <span style="color:var(--slate);font-size:0.85rem;">(2012-06-04)</span></li>
+          <li><a href="/mattions.github.com/posts/2012-06-05-science-and-society-program.html">Science and Society program</a> <span style="color:var(--slate);font-size:0.85rem;">(2012-06-05)</span></li>
+          <li><a href="/mattions.github.com/posts/2012-06-05-sustainablesouk-a-geolocalized-market-to-trade-local-goods.html">SustainableSouk, a geolocalized market to trade local goods</a> <span style="color:var(--slate);font-size:0.85rem;">(2012-06-05)</span></li>
+          <li><a href="/mattions.github.com/posts/2014-10-05-coinduit.html">Coinduit, an easy way to get bitcoins</a> <span style="color:var(--slate);font-size:0.85rem;">(2014-10-05)</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2025 Michele Mattioni</p>
+  </footer>
+</body>
+</html>
