@@ -10,7 +10,7 @@ title: Archive
   <ul class="archive-list">
     {% for post in site.posts %}
     <li class="archive-item">
-      <time>{{ post.date | date: "%B %Y" }}</time> —
+      <time>{{ post.date | date: "%B %Y" }}</time>
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
     </li>
     {% endfor %}
