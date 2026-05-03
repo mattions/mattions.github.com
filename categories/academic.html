@@ -1,18 +1,21 @@
 ---
 layout: default
-title: Archive
+title: Category - academic
+category: "academic"
 ---
 <div class="container">
   <section class="list-header">
-    <h1>Archive</h1>
+    <h1>Category: academic</h1>
   </section>
 
   <ul class="archive-list">
     {% for post in site.posts %}
+    {% if post.category == "academic" %}
     <li class="archive-item">
       <time>{{ post.date | date: "%B %Y" }}</time> —
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
     </li>
+    {% endif %}
     {% endfor %}
   </ul>
 </div>

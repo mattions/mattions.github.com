@@ -1,18 +1,21 @@
 ---
 layout: default
-title: Archive
+title: Tag - bitcoin
+tag: "bitcoin"
 ---
 <div class="container">
   <section class="list-header">
-    <h1>Archive</h1>
+    <h1>Tag: bitcoin</h1>
   </section>
 
   <ul class="archive-list">
     {% for post in site.posts %}
+    {% if post.tags contains "bitcoin" %}
     <li class="archive-item">
       <time>{{ post.date | date: "%B %Y" }}</time> —
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
     </li>
+    {% endif %}
     {% endfor %}
   </ul>
 </div>

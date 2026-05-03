@@ -1,21 +1,20 @@
 ---
-layout: post
+layout: project
 title: "Neuronvisio, a Neuron companion"
-description: ""
+description: "A GUI for the NEURON simulator with 3D visualization capabilities."
 category: academic
 tags: [3D visualization, computational neuroscience, neurons, neuroml]
 ---
-{% include JB/setup %}
 
-<img src="{{BASE_PATH}}/assets/gfx/pyramidal_3D_change_voltage.png" />
+<img src="{{ '/assets/gfx/pyramidal_3D_change_voltage.png' | relative_url }}" />
 
-Neuronvisio is a Graphical User Interface for NEURON simulator environment with 
-3D capabilities. Neuronvisio makes easy to select and investigate sections’ 
-properties and it offers easy integration with matplotlib for plotting the 
+Neuronvisio is a Graphical User Interface for NEURON simulator environment with
+3D capabilities. Neuronvisio makes easy to select and investigate sections'
+properties and it offers easy integration with matplotlib for plotting the
 results.
 
-The geometry can be saved using NeuroML and the computational results in a 
-customised and extensible HDF5 format; the results can then be reload in the 
+The geometry can be saved using NeuroML and the computational results in a
+customised and extensible HDF5 format; the results can then be reload in the
 software and analysed in a later stage, without re-running the simulation.
 
 ## Features

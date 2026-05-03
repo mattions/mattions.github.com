@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<article class="project">
+  <header class="project-header">
+    <h1>{{ page.title }}</h1>
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %Y" }}</time>
+  </header>
+
+  <div class="project-body">
+    {{ content }}
+  </div>
+
+  {% if page.tags %}
+  <div class="project-tags">
+    {% for tag in page.tags %}
+    <span class="tag">{{ tag }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+</article>
+
+{% if site.posts.size > 1 %}
+<nav class="project-nav">
+  {% for p in site.posts %}
+  <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
+  {% endfor %}
+</nav>
+{% endif %}

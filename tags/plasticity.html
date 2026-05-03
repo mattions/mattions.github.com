@@ -1,18 +1,21 @@
 ---
 layout: default
-title: Archive
+title: Tag - plasticity
+tag: "plasticity"
 ---
 <div class="container">
   <section class="list-header">
-    <h1>Archive</h1>
+    <h1>Tag: plasticity</h1>
   </section>
 
   <ul class="archive-list">
     {% for post in site.posts %}
+    {% if post.tags contains "plasticity" %}
     <li class="archive-item">
       <time>{{ post.date | date: "%B %Y" }}</time> —
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
     </li>
+    {% endif %}
     {% endfor %}
   </ul>
 </div>

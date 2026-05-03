@@ -1,21 +1,21 @@
 ---
-layout: page
+layout: default
 title: Tags
-header: Posts By Tag
-group: navigation
 ---
-{% include JB/setup %}
+<div class="container">
+  <section class="list-header">
+    <h1>Tags</h1>
+  </section>
 
-<ul class="tag_box inline">
-  {% assign tags_list = site.tags %}  
-  {% include JB/tags_list %}
-</ul>
-
-
-{% for tag in site.tags %} 
-  <h2 id="{{ tag[0] }}-ref">{{ tag[0] }}</h2>
-  <ul>
-    {% assign pages_list = tag[1] %}  
-    {% include JB/pages_list %}
+  <ul class="tag-list">
+    {% assign tags_list = site.tags %}
+    {% if tags_list.first[0] == null %}
+      <li>No tags.</li>
+    {% else %}
+      {% for tag in tags_list %}
+      <li><a href="{{ tag[0] | slugify | prepend: '/tags/' | relative_url }}">{{ tag[0] }}</a></li>
+      {% endfor %}
+    {% endif %}
+    {% assign tags_list = nil %}
   </ul>
-{% endfor %}
+</div>

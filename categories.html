@@ -1,22 +1,21 @@
 ---
-layout: page
+layout: default
 title: Categories
-header: Posts By Category
-group: navigation
 ---
-{% include JB/setup %}
+<div class="container">
+  <section class="list-header">
+    <h1>Categories</h1>
+  </section>
 
-<ul class="tag_box inline">
-  {% assign categories_list = site.categories %}
-  {% include JB/categories_list %}
-</ul>
-
-
-{% for category in site.categories %} 
-  <h2 id="{{ category[0] }}-ref">{{ category[0] | join: "/" }}</h2>
-  <ul>
-    {% assign pages_list = category[1] %}  
-    {% include JB/pages_list %}
+  <ul class="category-list">
+    {% assign categories_list = site.categories %}
+    {% if categories_list.first[0] == null %}
+      <li>No categories.</li>
+    {% else %}
+      {% for category in categories_list %}
+      <li><a href="{{ category[0] | slugify | prepend: '/categories/' | relative_url }}">{{ category[0] }}</a></li>
+      {% endfor %}
+    {% endif %}
+    {% assign categories_list = nil %}
   </ul>
-{% endfor %}
-
+</div>

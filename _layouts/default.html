@@ -1,6 +1,34 @@
----
-theme :
-  name : twitter-2.0-cyborg
----
-{% include JB/setup %}
-{% include themes/twitter-2.0-cyborg/default.html %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}">
+  {% feed_meta %}
+</head>
+<body>
+  <header class="site-header">
+    <nav class="container">
+      <a href="{{ '/' | relative_url }}" class="logo">{{ site.title }}</a>
+      <ul class="nav-links">
+        {% for item in site.nav %}
+        <li><a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="active"{% endif %}>{{ item.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; {{ site.time | date: "%Y" }} {{ site.author.name }}. Built with Jekyll, hosted on GitHub Pages.</p>
+    </div>
+  </footer>
+</body>
+</html>
