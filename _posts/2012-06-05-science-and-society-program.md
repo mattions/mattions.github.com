@@ -1,6 +1,7 @@
 ---
 layout: project
 title: "Science and Society program"
+date: 2012-06-05
 description: "Public engagement in genomics and science policy."
 category: academic
 tags: [science and society, scisoc, public engagement]

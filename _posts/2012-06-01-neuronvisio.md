@@ -1,6 +1,7 @@
 ---
 layout: project
 title: "Neuronvisio, a Neuron companion"
+date: 2012-06-01
 description: "A GUI for the NEURON simulator with 3D visualization capabilities."
 category: academic
 tags: [3D visualization, computational neuroscience, neurons, neuroml]

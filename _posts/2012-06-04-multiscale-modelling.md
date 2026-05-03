@@ -1,6 +1,7 @@
 ---
 layout: project
 title: "Multiscale modelling, integrating electrical and biochemical"
+date: 2012-06-04
 description: "An event-driven algorithm integrating electrical and biochemical simulations at the multiscale."
 category: academic
 tags: [multiscale modelling, event driven, msn, plasticity]

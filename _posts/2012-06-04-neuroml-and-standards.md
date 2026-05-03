@@ -1,6 +1,7 @@
 ---
 layout: project
 title: "NeuroML and standards"
+date: 2012-06-04
 description: "Standardized model representation for computational neuroscience."
 category: academic
 tags: [standards, neuroml, sbml, codification]

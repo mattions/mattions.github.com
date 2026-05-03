@@ -1,6 +1,7 @@
 ---
 layout: project
 title: "SustainableSouk, a geolocalized market to trade local goods"
+date: 2012-06-05
 description: "A geolocalized platform connecting local producers with community consumers."
 category: sustainability
 tags: [local food, local goods, geospatial, maps]
