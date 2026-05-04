@@ -28,6 +28,7 @@ header: Post Archive
           {% if post.category %}
             <span style="color: var(--accent-blue);">{{ post.category }}</span>
             {% if post.tags %} · {% for tag in post.tags %}#{{ tag }}{% if forloop.last != true %}, {% endif %}{% endfor %}{% endif %}
+          {% endif %}
         </div>
       </div>
       {% endfor %}
