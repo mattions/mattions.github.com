@@ -5,8 +5,6 @@ description: ""
 category: academic
 tags: [science and society, scisoc, public engagement]
 ---
-{% include JB/setup %}
-
 Science shapes our society, however the general public is not always uptodate
 with the latest information and discoveries.
 

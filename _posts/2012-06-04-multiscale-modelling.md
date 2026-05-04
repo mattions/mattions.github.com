@@ -5,10 +5,8 @@ description: ""
 category: academic 
 tags: [multiscale modelling, event driven, msn, plasticity]
 ---
-{% include JB/setup %}
-
 <center>
-<img src="{{ BASE_PATH }}/assets/gfx/spines_detailed_thumbnail.png" />
+<img src="/assets/gfx/spines_detailed_thumbnail.png" />
 </center>
 
 A model can be considered multiscale when one or both these conditions are true: 
@@ -40,4 +38,4 @@ The paper about the project can be found on
 the code is on [Github](https://github.com/mattions/TimeScales), and the documentation 
 is available at [Timescale documentation](http://michelemattioni.me/TimeScales/).
 
-<img src="{{BASE_PATH}}/assets/gfx/multiscale_simulation_msn.png" />
+<img src="/assets/gfx/multiscale_simulation_msn.png" />

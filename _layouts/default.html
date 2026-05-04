@@ -1,6 +1,78 @@
----
-theme :
-  name : twitter-2.0-cyborg
----
-{% include JB/setup %}
-{% include themes/twitter-2.0-cyborg/default.html %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}Michele Mattioni — Computational Neuroscientist, Engineer & Maker{% endif %}">
+  <title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  {% if page.layout == "post" %}
+  <style>
+    .post-content { color: var(--text-secondary); line-height: 1.9; font-size: 1.02rem; }
+    .post-content p { margin-bottom: 1.2em; }
+    .post-content h1, .post-content h2, .post-content h3 { color: var(--text-primary); margin-top: 1.8em; margin-bottom: 0.6em; }
+    .post-content a { color: var(--text-accent); border-bottom: 1px solid rgba(74,158,255,0.3); }
+    .post-content a:hover { color: var(--accent-cyan); border-bottom-color: var(--accent-cyan); }
+    .post-content img { border-radius: 12px; margin: 1em 0; box-shadow: var(--shadow-md); }
+    .post-content ul, .post-content ol { margin: 1em 0; padding-left: 1.5em; }
+    .post-content li { margin-bottom: 0.5em; }
+    .post-content blockquote { border-left: 3px solid var(--accent-blue); padding-left: 1em; margin: 1em 0; color: var(--text-muted); font-style: italic; }
+    .post-content code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+    .post-content pre { background: rgba(255,255,255,0.03); padding: 16px; border-radius: 8px; overflow-x: auto; margin: 1em 0; border: 1px solid var(--glass-border); }
+    .post-content pre code { background: none; padding: 0; }
+    .post-meta { display: flex; gap: 16px; margin-bottom: 24px; font-size: 0.85rem; color: var(--text-muted); }
+    .post-meta span { display: flex; align-items: center; gap: 4px; }
+    .post-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--glass-border); }
+    .post-tags .tag { font-size: 0.75rem; padding: 4px 10px; border-radius: 6px; background: rgba(74,158,255,0.1); color: var(--accent-blue); }
+    .post-nav { display: flex; justify-content: space-between; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--glass-border); }
+    .post-nav a { color: var(--accent-blue); font-weight: 600; font-size: 0.9rem; }
+    .post-nav a:hover { color: var(--accent-cyan); }
+  </style>
+  {% endif %}
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="/" class="navbar-brand">MM</a>
+      <ul class="navbar-nav" id="navMenu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/#projects">Projects</a></li>
+        <li><a href="/#blog">Blog</a></li>
+        <li><a href="/#social">Social</a></li>
+        <li><a href="https://github.com/mattions" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- CONTENT -->
+  <div style="padding-top: 60px;">
+    {{ content }}
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer" style="margin-top: 60px;">
+    <div class="container">
+      <p>&copy; {{ site.time | date: '%Y' }} Michele Mattioni · Built with care</p>
+    </div>
+  </footer>
+
+  <!-- JS (minimal for post pages) -->
+  <script>
+    document.getElementById('footerYear') && (document.getElementById('footerYear').textContent = new Date().getFullYear());
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar')?.classList.toggle('scrolled', window.scrollY > 50);
+    });
+    document.getElementById('navToggle')?.addEventListener('click', () => {
+      document.getElementById('navMenu')?.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
