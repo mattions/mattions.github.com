@@ -275,17 +275,17 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--accent-blue)"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             <span>@mattions</span>
           </div>
-          <!-- X/Twitter timeline embed via twitframe.com (free, no auth required) -->
+          <!-- X/Twitter timeline embed via official widgets.js (safe, no third-party proxy) -->
           <div class="twitter-embed-wrap" id="twitterEmbed">
-            <iframe 
-              src="https://twitframe.com/show?url=https://twitter.com/mattions" 
-              width="100%" 
-              height="500" 
-              frameborder="0" 
-              scrolling="no"
-              allowtransparency="true"
-              style="border-radius: 12px; overflow: hidden; background: var(--bg-secondary); border: 1px solid var(--glass-border);">
-            </iframe>
+            <a class="twitter-timeline" 
+               href="https://twitter.com/mattions" 
+               data-height="500" 
+               data-dnt="true"
+               data-theme="dark"
+               style="border-radius: 12px; overflow: hidden; background: var(--bg-secondary); border: 1px solid var(--glass-border);">
+              Loading tweets from @mattions...
+            </a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>
         </div>
         
@@ -369,10 +369,12 @@
     async function fetchBlogFeed() {
       const feedEl = document.getElementById('blogFeed');
       try {
-        // RSS feeds are CORS-enabled — fetch directly, no proxy needed
-        const response = await fetch('https://blog.michelemattioni.me/feed/', { signal: AbortSignal.timeout(10000) });
+        // RSS feeds need CORS — use allorigins.win proxy (free, no key)
+        const proxyUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent('https://blog.michelemattioni.me/feed/');
+        const response = await fetch(proxyUrl, { signal: AbortSignal.timeout(10000) });
         if (!response.ok) throw new Error('HTTP ' + response.status);
-        const text = await response.text();
+        const json = await response.json();
+        const text = json.contents;
         
         // Parse XML
         const parser = new DOMParser();

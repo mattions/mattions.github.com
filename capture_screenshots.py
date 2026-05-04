@@ -9,6 +9,7 @@ screenshots = [
     ("http://localhost:8888/", "screenshot-home-full.png", "Full homepage"),
     ("http://localhost:8888/blog", "screenshot-blog.png", "Blog page"),
     ("http://localhost:8888/categories", "screenshot-categories.png", "Categories page"),
+    ("http://localhost:8888/#social", "screenshot-social-feed.png", "Social/X feed section"),
 ]
 
 for url, filename, description in screenshots:
