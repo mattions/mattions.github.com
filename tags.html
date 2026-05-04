@@ -16,23 +16,26 @@ header: Posts By Tag
     {% if site.tags.size > 0 %}
     <!-- Tag cloud -->
     <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px;">
-      {% assign sorted_tags = site.tags | sort: 0 %}
-      {% for tag in sorted_tags %}
-      <a href="#{{ tag[0] | slugify }}" style="display: inline-flex; align-items: center; gap: 4px; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; color: var(--accent-blue); background: rgba(74, 158, 255, 0.08); border: 1px solid rgba(74, 158, 255, 0.15); transition: all 0.3s ease; text-decoration: none;">
-        #{{ tag[0] }}
-        <span style="font-size: 0.75rem; color: var(--text-muted);">({{ tag[1].size }})</span>
+      {% for tag in site.tags %}
+      {% assign tag_name = tag[0] %}
+      {% assign posts = tag[1] %}
+      <a href="#{{ tag_name | slugify }}" style="display: inline-flex; align-items: center; gap: 4px; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; color: var(--accent-blue); background: rgba(74, 158, 255, 0.08); border: 1px solid rgba(74, 158, 255, 0.15); transition: all 0.3s ease; text-decoration: none;">
+        #{{ tag_name }}
+        <span style="font-size: 0.75rem; color: var(--text-muted);">({{ posts.size }})</span>
       </a>
       {% endfor %}
     </div>
     
     <!-- Posts by tag -->
-    {% for tag in sorted_tags %}
+    {% for tag in site.tags %}
+    {% assign tag_name = tag[0] %}
+    {% assign posts = tag[1] %}
     <div style="margin-bottom: 32px;">
-      <h2 id="{{ tag[0] | slugify }}" style="font-size: 1.3rem; font-weight: 700; margin-bottom: 16px; color: var(--accent-blue);">
-        #{{ tag[0] }}
+      <h2 id="{{ tag_name | slugify }}" style="font-size: 1.3rem; font-weight: 700; margin-bottom: 16px; color: var(--accent-blue);">
+        #{{ tag_name }}
       </h2>
       <div style="display: flex; flex-direction: column; gap: 12px;">
-        {% for post in tag[1] %}
+        {% for post in posts %}
         <div class="glass-card" style="padding: 16px 20px;">
           <a href="{{ post.url }}" style="color: var(--text-primary); font-weight: 600; font-size: 0.95rem;">{{ post.title }}</a>
           <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">

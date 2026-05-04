@@ -13,16 +13,16 @@ header: Posts By Category
     
     <h1 style="font-size: 2rem; font-weight: 800; margin-bottom: 40px;">Categories</h1>
     
-    {% assign categories = site.categories | sort: 0 %}
-    {% if categories.size > 0 %}
-    {% for category in categories %}
+    {% for category in site.categories %}
+    {% assign category_name = category[0] %}
+    {% assign posts = category[1] %}
+    {% if posts.size > 0 %}
     <div style="margin-bottom: 32px;">
-      <h2 id="{{ category[0] | slugify }}" style="font-size: 1.3rem; font-weight: 700; margin-bottom: 16px; color: var(--accent-blue);">
-        {{ category[0] }}
+      <h2 id="{{ category_name | slugify }}" style="font-size: 1.3rem; font-weight: 700; margin-bottom: 16px; color: var(--accent-blue);">
+        {{ category_name }}
       </h2>
       <div style="display: flex; flex-direction: column; gap: 12px;">
-        {% assign pages_list = category[1] %}
-        {% for post in pages_list %}
+        {% for post in posts %}
         <div class="glass-card" style="padding: 16px 20px;">
           <a href="{{ post.url }}" style="color: var(--text-primary); font-weight: 600; font-size: 0.95rem;">{{ post.title }}</a>
           <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">
@@ -33,6 +33,7 @@ header: Posts By Category
         {% endfor %}
       </div>
     </div>
+    {% endif %}
     {% endfor %}
     {% else %}
     <p style="color: var(--text-muted);">No categories yet.</p>
