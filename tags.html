@@ -2,20 +2,50 @@
 layout: page
 title: Tags
 header: Posts By Tag
-group: navigation
 ---
-{% include JB/setup %}
 
-<ul class="tag_box inline">
-  {% assign tags_list = site.tags %}  
-  {% include JB/tags_list %}
-</ul>
-
-
-{% for tag in site.tags %} 
-  <h2 id="{{ tag[0] }}-ref">{{ tag[0] }}</h2>
-  <ul>
-    {% assign pages_list = tag[1] %}  
-    {% include JB/pages_list %}
-  </ul>
-{% endfor %}
+<section class="section" style="padding-top: 100px;">
+  <div class="container" style="max-width: 780px;">
+    <a href="/" style="color: var(--text-muted); font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 32px;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back to Home
+    </a>
+    
+    <h1 style="font-size: 2rem; font-weight: 800; margin-bottom: 40px;">Tags</h1>
+    
+    {% if site.tags.size > 0 %}
+    <!-- Tag cloud -->
+    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px;">
+      {% assign sorted_tags = site.tags | sort: 0 %}
+      {% for tag in sorted_tags %}
+      <a href="#{{ tag[0] | slugify }}" style="display: inline-flex; align-items: center; gap: 4px; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; color: var(--accent-blue); background: rgba(74, 158, 255, 0.08); border: 1px solid rgba(74, 158, 255, 0.15); transition: all 0.3s ease; text-decoration: none;">
+        #{{ tag[0] }}
+        <span style="font-size: 0.75rem; color: var(--text-muted);">({{ tag[1].size }})</span>
+      </a>
+      {% endfor %}
+    </div>
+    
+    <!-- Posts by tag -->
+    {% for tag in sorted_tags %}
+    <div style="margin-bottom: 32px;">
+      <h2 id="{{ tag[0] | slugify }}" style="font-size: 1.3rem; font-weight: 700; margin-bottom: 16px; color: var(--accent-blue);">
+        #{{ tag[0] }}
+      </h2>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        {% for post in tag[1] %}
+        <div class="glass-card" style="padding: 16px 20px;">
+          <a href="{{ post.url }}" style="color: var(--text-primary); font-weight: 600; font-size: 0.95rem;">{{ post.title }}</a>
+          <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">
+            {{ post.date | date: "%B %d, %Y" }}
+            {% if post.category %} · <span style="color: var(--accent-purple);">{{ post.category }}</span>{% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p style="color: var(--text-muted);">No tags yet.</p>
+    {% endif %}
+  </div>
+</section>
