@@ -27,7 +27,6 @@
       <ul class="navbar-nav" id="navMenu">
         <li><a href="#home" class="active">Home</a></li>
         <li><a href="#blog">Blog</a></li>
-        <li><a href="#social">Social</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="https://github.com/mattions" target="_blank" rel="noopener">GitHub</a></li>
       </ul>
@@ -134,75 +133,6 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 10.6c-2.7 0-4.8 2.1-4.8 4.8 0 2.7 2.1 4.8 4.8 4.8 2.7 0 4.8-2.1 4.8-4.8 0-2.7-2.1-4.8-4.8-4.8zm0-8.4C6 2.2 1 7.2 1 13.4S6 24.6 12 24.6 23 19.6 23 13.4 18 2.2 12 2.2z"/></svg>
           Read the Full Blog
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════ X / TWITTER FEED ═══════════════════════ -->
-  <section class="section" id="social">
-    <div class="container">
-      <div class="section-header fade-in">
-        <h2>Latest from <span class="gradient-text">X</span></h2>
-        <p>What I'm saying on X (formerly Twitter).</p>
-        <div class="section-divider"></div>
-      </div>
-      
-      <div class="twitter-feed fade-in">
-        <div class="timeline">
-          <div class="twitter-header">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--accent-blue)"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            <span>@mattions</span>
-          </div>
-          <!-- X/Twitter timeline embed via official widgets.js (safe, no third-party proxy) -->
-          <div class="twitter-embed-wrap" id="twitterEmbed">
-            <!-- Fallback content if embed fails to load -->
-            <div id="twitterFallback" style="padding: 20px; text-align: center; color: var(--text-muted);">
-              <p>Loading tweets from @mattions...</p>
-              <a href="https://x.com/mattions" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; border-radius: 12px; font-size: 0.9rem; font-weight: 600; color: var(--text-primary); background: var(--gradient-accent); margin-top: 12px; text-decoration: none;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                View @mattions on X
-              </a>
-            </div>
-            <a class="twitter-timeline" 
-               href="https://x.com/mattions" 
-               data-height="500" 
-               data-dnt="true"
-               data-theme="light"
-               data-chrome="nofooter noborders transparent"
-               style="display: none; border-radius: 12px; overflow: hidden; background: var(--bg-secondary); border: 1px solid var(--glass-border);"
-               id="twitterTimeline">
-            </a>
-          </div>
-          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-          <script>
-            // Initialize Twitter embed after page load
-            window.addEventListener('load', function() {
-              const timeline = document.getElementById('twitterTimeline');
-              const fallback = document.getElementById('twitterFallback');
-              if (timeline) {
-                // Try to load the embed
-                setTimeout(function() {
-                  if (typeof twttr !== 'undefined' && twttr.widgets) {
-                    twttr.widgets.load(timeline);
-                    timeline.style.display = 'block';
-                    if (fallback) fallback.style.display = 'none';
-                  } else {
-                    // Fallback: show the fallback content
-                    timeline.style.display = 'none';
-                    if (fallback) fallback.style.display = 'block';
-                  }
-                }, 1000);
-              }
-            });
-          </script>
-        </div>
-        
-        <div class="twitter-more">
-          <a href="https://twitter.com/mattions" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            View More on X
-          </a>
-        </div>
       </div>
     </div>
   </section>
