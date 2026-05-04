@@ -448,17 +448,20 @@
       }
     }
     
-    // Fetch blog feed when the section comes into view
-    const blogObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          fetchBlogFeed();
-          blogObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    
-    blogObserver.observe(document.getElementById('blogFeed'));
+    // Fetch blog feed eagerly on page load (not just on intersection)
+    document.addEventListener('DOMContentLoaded', () => {
+      // Try immediately; if element is not yet in DOM, retry after a short delay
+      const blogFeed = document.getElementById('blogFeed');
+      if (blogFeed) {
+        fetchBlogFeed();
+      } else {
+        setTimeout(() => {
+          if (document.getElementById('blogFeed')) {
+            fetchBlogFeed();
+          }
+        }, 500);
+      }
+    });
     
     // ── Project Modal Data ──
     const projectData = {
