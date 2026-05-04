@@ -13,11 +13,55 @@ header: Posts By Category
     
     <h1 style="font-size: 2rem; font-weight: 800; margin-bottom: 40px;">Categories</h1>
     
+    <!-- Static fallback content if Jekyll fails to process -->
+    <div id="categoriesFallback" style="display: none;">
+      <div style="margin-bottom: 32px;">
+        <h2 id="academic" style="font-size: 1.3rem; font-weight: 700; margin-bottom: 16px; color: var(--accent-blue);">Academic</h2>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div class="glass-card" style="padding: 16px 20px;">
+            <a href="/2012/06/01/neuronvisio" style="color: var(--text-primary); font-weight: 600; font-size: 0.95rem;">Neuronvisio — A Neuron Companion</a>
+            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">June 01, 2012 · #Academic</div>
+          </div>
+          <div class="glass-card" style="padding: 16px 20px;">
+            <a href="/2012/06/04/multiscale-modelling" style="color: var(--text-primary); font-weight: 600; font-size: 0.95rem;">Multiscale Modelling — Integrating Electrical and Biochemical</a>
+            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">June 04, 2012 · #Academic</div>
+          </div>
+          <div class="glass-card" style="padding: 16px 20px;">
+            <a href="/2012/06/04/neuroml-and-standards" style="color: var(--text-primary); font-weight: 600; font-size: 0.95rem;">NeuroML & Standards</a>
+            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">June 04, 2012 · #Academic</div>
+          </div>
+          <div class="glass-card" style="padding: 16px 20px;">
+            <a href="/2012/06/05/science-and-society-program" style="color: var(--text-primary); font-weight: 600; font-size: 0.95rem;">Science and Society Program</a>
+            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">June 05, 2012 · #Academic</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-bottom: 32px;">
+        <h2 id="sustainability" style="font-size: 1.3rem; font-weight: 700; margin-bottom: 16px; color: var(--accent-green);">Sustainability</h2>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div class="glass-card" style="padding: 16px 20px;">
+            <a href="/2012/06/05/sustainablesouk-a-geolocalized-market-to-trade-local-goods" style="color: var(--text-primary); font-weight: 600; font-size: 0.95rem;">SustainableSouk: A Geolocalized Market to Trade Local Goods</a>
+            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">June 05, 2012 · #Sustainability</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-bottom: 32px;">
+        <h2 id="fintech" style="font-size: 1.3rem; font-weight: 700; margin-bottom: 16px; color: #fbbf24;">FinTech</h2>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div class="glass-card" style="padding: 16px 20px;">
+            <a href="/2014/10/05/coinduit" style="color: var(--text-primary); font-weight: 600; font-size: 0.95rem;">Coinduit</a>
+            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">October 05, 2014 · #FinTech</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Jekyll processed content -->
     {% for category in site.categories %}
     {% assign category_name = category[0] %}
     {% assign posts = category[1] %}
     {% if posts.size > 0 %}
-    <div style="margin-bottom: 32px;">
+    <div style="margin-bottom: 32px;" class="jekyll-content">
       <h2 id="{{ category_name | slugify }}" style="font-size: 1.3rem; font-weight: 700; margin-bottom: 16px; color: var(--accent-blue);">
         {{ category_name }}
       </h2>
@@ -37,3 +81,14 @@ header: Posts By Category
     {% endfor %}
   </div>
 </section>
+
+<script>
+  // If Jekyll didn't process the page, show the fallback content
+  document.addEventListener('DOMContentLoaded', function() {
+    const jekyllContent = document.querySelector('.jekyll-content');
+    const fallback = document.getElementById('categoriesFallback');
+    if (!jekyllContent && fallback) {
+      fallback.style.display = 'block';
+    }
+  });
+</script>

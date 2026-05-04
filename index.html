@@ -155,16 +155,46 @@
           </div>
           <!-- X/Twitter timeline embed via official widgets.js (safe, no third-party proxy) -->
           <div class="twitter-embed-wrap" id="twitterEmbed">
+            <!-- Fallback content if embed fails to load -->
+            <div id="twitterFallback" style="padding: 20px; text-align: center; color: var(--text-muted);">
+              <p>Loading tweets from @mattions...</p>
+              <a href="https://x.com/mattions" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; border-radius: 12px; font-size: 0.9rem; font-weight: 600; color: var(--text-primary); background: var(--gradient-accent); margin-top: 12px; text-decoration: none;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                View @mattions on X
+              </a>
+            </div>
             <a class="twitter-timeline" 
-               href="https://twitter.com/mattions" 
+               href="https://x.com/mattions" 
                data-height="500" 
                data-dnt="true"
-               data-theme="dark"
-               style="border-radius: 12px; overflow: hidden; background: var(--bg-secondary); border: 1px solid var(--glass-border);">
-              Loading tweets from @mattions...
+               data-theme="light"
+               data-chrome="nofooter noborders transparent"
+               style="display: none; border-radius: 12px; overflow: hidden; background: var(--bg-secondary); border: 1px solid var(--glass-border);"
+               id="twitterTimeline">
             </a>
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <script>
+            // Initialize Twitter embed after page load
+            window.addEventListener('load', function() {
+              const timeline = document.getElementById('twitterTimeline');
+              const fallback = document.getElementById('twitterFallback');
+              if (timeline) {
+                // Try to load the embed
+                setTimeout(function() {
+                  if (typeof twttr !== 'undefined' && twttr.widgets) {
+                    twttr.widgets.load(timeline);
+                    timeline.style.display = 'block';
+                    if (fallback) fallback.style.display = 'none';
+                  } else {
+                    // Fallback: show the fallback content
+                    timeline.style.display = 'none';
+                    if (fallback) fallback.style.display = 'block';
+                  }
+                }, 1000);
+              }
+            });
+          </script>
         </div>
         
         <div class="twitter-more">
@@ -369,31 +399,25 @@
     async function fetchBlogFeed() {
       const feedEl = document.getElementById('blogFeed');
       try {
-        // RSS feeds need CORS — use allorigins.win proxy (free, no key)
-        const proxyUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent('https://blog.michelemattioni.me/feed/');
-        const response = await fetch(proxyUrl, { signal: AbortSignal.timeout(10000) });
+        // Use rss2json.com API (free, handles CORS, converts RSS to JSON)
+        const apiUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent('https://blog.michelemattioni.me/feed/');
+        const response = await fetch(apiUrl, { signal: AbortSignal.timeout(10000) });
         if (!response.ok) throw new Error('HTTP ' + response.status);
         const json = await response.json();
-        const text = json.contents;
         
-        // Parse XML
-        const parser = new DOMParser();
-        const xml = parser.parseFromString(text, 'text/xml');
-        const items = xml.querySelectorAll('item');
-        
-        if (items.length === 0) {
+        if (json.status !== 'ok' || !json.items || json.items.length === 0) {
           feedEl.innerHTML = '<div class="blog-error">No blog posts found. <a href="https://blog.michelemattioni.me/">Visit the blog →</a></div>';
           return;
         }
         
         let html = '';
-        const maxItems = Math.min(items.length, 5);
+        const maxItems = Math.min(json.items.length, 5);
         for (let i = 0; i < maxItems; i++) {
-          const item = items[i];
-          const title = item.querySelector('title')?.textContent || '';
-          const link = item.querySelector('link')?.textContent || '';
-          const description = item.querySelector('description')?.textContent || '';
-          const pubDate = item.querySelector('pubDate')?.textContent || '';
+          const item = json.items[i];
+          const title = item.title || '';
+          const link = item.link || '';
+          const description = item.description || '';
+          const pubDate = item.pubDate || '';
           const date = pubDate ? new Date(pubDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : '';
           
           // Strip HTML tags from description
