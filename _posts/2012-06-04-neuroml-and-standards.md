@@ -5,9 +5,7 @@ description: ""
 category: academic
 tags: [standars, neuroml, sbml, codification]
 ---
-{% include JB/setup %}
-
-<img src="{{ BASE_PATH }}/assets/gfx/NeuroML_logo.png" />
+<img src="/assets/gfx/NeuroML_logo.png" />
 
 Developing complex models (like mine) is only possible if we can reuse and merge 
 smaller models. To achieve this we need a system to archive and express models in 

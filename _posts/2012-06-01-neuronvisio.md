@@ -5,9 +5,7 @@ description: ""
 category: academic
 tags: [3D visualization, computational neuroscience, neurons, neuroml]
 ---
-{% include JB/setup %}
-
-<img src="{{BASE_PATH}}/assets/gfx/pyramidal_3D_change_voltage.png" />
+<img src="/assets/gfx/pyramidal_3D_change_voltage.png" />
 
 Neuronvisio is a Graphical User Interface for NEURON simulator environment with 
 3D capabilities. Neuronvisio makes easy to select and investigate sections’ 

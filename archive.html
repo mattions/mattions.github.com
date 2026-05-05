@@ -1,10 +1,40 @@
 ---
 layout: page
-title : Archive
-header : Post Archive
-group: navigation
+title: Archive
+header: Post Archive
 ---
-{% include JB/setup %}
 
-{% assign posts_collate = site.posts %}
-{% include JB/posts_collate %}
+<section class="section" style="padding-top: 100px;">
+  <div class="container" style="max-width: 780px;">
+    <a href="/" style="color: var(--text-muted); font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 32px;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back to Home
+    </a>
+    
+    <h1 style="font-size: 2rem; font-weight: 800; margin-bottom: 40px;">Archive</h1>
+    
+    {% assign posts = site.posts | sort: 'date' | reverse %}
+    {% if posts.size > 0 %}
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      {% for post in posts %}
+      <div class="glass-card" style="padding: 20px 24px;">
+        <div style="font-size: 0.8rem; color: var(--accent-blue); font-weight: 600; margin-bottom: 6px;">
+          {{ post.date | date: "%B %d, %Y" }}
+        </div>
+        <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 4px;">
+          <a href="{{ post.url }}" style="color: var(--text-primary);">{{ post.title }}</a>
+        </h3>
+        <div style="font-size: 0.8rem; color: var(--text-muted);">
+          {% if post.category %}
+            <span style="color: var(--accent-blue);">{{ post.category }}</span>
+            {% if post.tags %} · {% for tag in post.tags %}#{{ tag }}{% if forloop.last != true %}, {% endif %}{% endfor %}{% endif %}
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p style="color: var(--text-muted);">No posts yet.</p>
+    {% endif %}
+  </div>
+</section>

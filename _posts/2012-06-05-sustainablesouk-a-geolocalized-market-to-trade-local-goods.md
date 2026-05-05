@@ -5,8 +5,6 @@ description: ""
 category: sustainability
 tags: [local food, local goods, geospatial, maps]
 ---
-{% include JB/setup %}
-
 The SustainableSouk was an attempt to create a geolocalized sustainable system, 
 where super local producers (urban growers,small farmers) can find super busy 
 customers, like students, working people. 
