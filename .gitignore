@@ -8,3 +8,6 @@ _site
 _theme_packages
 
 .project
+
+# Tesla private key (NEVER commit)
+.well-known/appspecific/private-key.pem
