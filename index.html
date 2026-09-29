@@ -233,24 +233,60 @@
           </div>
         </div>
         
-        <!-- Project 6: Coinduit -->
+        <!-- Project 7: Ippocra -->
         <div class="glass-card project-card fade-in">
           <div class="card-header">
-            <span class="card-category">FinTech</span>
+            <span class="card-category">Company</span>
           </div>
-          <h3>Coinduit</h3>
-          <p>A platform making it easy and quick to buy bitcoins in the UK. A practical solution for the growing demand for cryptocurrency access.</p>
+          <h3>Ippocra</h3>
+          <p>A company building software that adapts to your business — a local AI that handles your documents, learns your workflow, and lives on your machine. Own your data, own your AI.</p>
           <div class="card-tags">
-            <span class="tag">Bitcoin</span>
-            <span class="tag">FinTech</span>
-            <span class="tag">Payments</span>
+            <span class="tag">Local AI</span>
+            <span class="tag">Data Ownership</span>
+            <span class="tag">Enterprise</span>
           </div>
           <div class="card-meta">
-            <span>2014</span>
-            <a href="https://coinduit.io" target="_blank" rel="noopener" class="card-link">Visit →</a>
+            <span>2024–present</span>
+            <a href="https://ippocra.com" target="_blank" rel="noopener" class="card-link">Visit →</a>
           </div>
         </div>
-        
+
+        <!-- Project 8: ILAI -->
+        <div class="glass-card project-card fade-in">
+          <div class="card-header">
+            <span class="card-category">Product</span>
+          </div>
+          <h3>ILAI</h3>
+          <p>Ippocra Local Artificial Intelligence. A self-contained local AI colleague that handles confidential documents, learns your workflow, and runs on your own infrastructure — no cloud in the loop.</p>
+          <div class="card-tags">
+            <span class="tag">Local LLM</span>
+            <span class="tag">Hermes Agent</span>
+            <span class="tag">Privacy</span>
+          </div>
+          <div class="card-meta">
+            <span>2025–present</span>
+            <a href="https://ilai.ippocra.com/en/" target="_blank" rel="noopener" class="card-link">Visit →</a>
+          </div>
+        </div>
+
+        <!-- Project 9: Ippo -->
+        <div class="glass-card project-card fade-in">
+          <div class="card-header">
+            <span class="card-category">Product</span>
+          </div>
+          <h3>Ippo</h3>
+          <p>The digital health platform for families. Organize, find and share medical reports securely — a single place to keep a family's health history.</p>
+          <div class="card-tags">
+            <span class="tag">Digital Health</span>
+            <span class="tag">Families</span>
+            <span class="tag">Document Management</span>
+          </div>
+          <div class="card-meta">
+            <span>2025–present</span>
+            <a href="https://ippocra.com/en/ippo" target="_blank" rel="noopener" class="card-link">Visit →</a>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -430,38 +466,41 @@
         ">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
             <h2 style="font-size: 1.4rem; font-weight: 800;">${data.title}</h2>
-            <button onclick="this.closest('div[style*=position]').nextElementSibling.remove(); this.closest('div[style*=position]').remove()" style="
+            <button class="modal-close" aria-label="Close" style="
               background: none; border: none; color: var(--text-muted); font-size: 1.5rem; cursor: pointer;
               width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;
               border-radius: 8px; transition: all 0.2s;
-            " onmouseover="this.style.color='var(--text-primary)'; this.style.background='rgba(255,255,255,0.06)'" onmouseout="this.style.color='var(--text-muted)'; this.style.background='none'">×</button>
+            ">×</button>
           </div>
           <div style="color: var(--text-secondary); line-height: 1.8;">${data.content}</div>
         </div>
       `;
       
-      // Add the close button's sibling reference
       document.body.appendChild(modal);
       
-      // Trigger animation
-      requestAnimationFrame(() => modal.style.opacity = '1');
+      // Shared close routine (fade out, then remove + clean up listeners)
+      function closeModal() {
+        modal.style.opacity = '0';
+        setTimeout(() => modal.remove(), 300);
+        document.removeEventListener('keydown', keyHandler);
+      }
       
-      // Close on backdrop click
+      // Close via the × button
+      modal.querySelector('.modal-close').addEventListener('click', closeModal);
+      
+      // Close on backdrop click (only when clicking the overlay itself, not the card)
       modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-          modal.style.opacity = '0';
-          setTimeout(() => modal.remove(), 300);
-        }
+        if (e.target === modal) closeModal();
       });
       
       // Close on Escape
-      document.addEventListener('keydown', function handler(e) {
-        if (e.key === 'Escape') {
-          modal.style.opacity = '0';
-          setTimeout(() => modal.remove(), 300);
-          document.removeEventListener('keydown', handler);
-        }
-      });
+      function keyHandler(e) {
+        if (e.key === 'Escape') closeModal();
+      }
+      document.addEventListener('keydown', keyHandler);
+      
+      // Trigger animation
+      requestAnimationFrame(() => modal.style.opacity = '1');
     }
   </script>
 
